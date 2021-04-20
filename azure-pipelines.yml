@@ -13,13 +13,13 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'MPN-TestRG'
+    azureResourceManagerConnection: 'MPN-Test'
     subscriptionId: 'da85668a-1a23-4ac7-b6b2-f9da75205f8e'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'testvmrg01'
     location: 'UK South'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/kubrox/azure_scratch/main/vm-deploy.json'
-    csmParametersFileLink: 'https://raw.githubusercontent.com/kubrox/azure_scratch/main/vm-deploy-parameters.json'
+    csmFileLink: 'https://raw.githubusercontent.com/kubrox/azure_scratch/main/vm-deploy.json?token=ALJ2OK6LYHPFNVB5GCEM7ITAP23WC'
+    csmParametersFileLink: 'https://raw.githubusercontent.com/kubrox/azure_scratch/main/vm-deploy-parameters.json?token=ALJ2OK6U5BDT3ZZP5CLWHTTAP23UW'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
