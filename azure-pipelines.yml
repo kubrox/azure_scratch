@@ -10,3 +10,16 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'MPN-TestRG'
+    subscriptionId: 'da85668a-1a23-4ac7-b6b2-f9da75205f8e'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'testvmrg01'
+    location: 'UK South'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://github.com/kubrox/azure_scratch/blob/main/vm-deploy.json'
+    csmParametersFileLink: 'https://github.com/kubrox/azure_scratch/blob/main/vm-deploy-parameters.json'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
